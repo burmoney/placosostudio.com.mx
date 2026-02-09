@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Burzache Milliones</title>
+<style>
+body {
+  margin: 0;
+  padding-top: 130px; /* To account for fixed navbar height */
+  background: url(https://i.pinimg.com/originals/74/43/a3/7443a31b6a19e5630b94a6538ff9bdd1.gif) no-repeat center fixed;
+  background-size: cover;
+  color: black;
+  font-family: Arial, sans-serif;
+}
+
+/* Navbar Styles */
+#navbar {
+  width: 100%;
+  height: 130px;
+  background: url(https://media.giphy.com/media/N4CdhF5YCIKNG/source.gif) no-repeat center center;
+  background-size: cover;
+  position: fixed;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  z-index: 999;
+}
+
+#linkref {
+  color: white;
+  text-decoration: none;
+  margin: 0 20px;
+  padding: 10px;
+  font-weight: bold;
+}
+
+#linkref:hover {
+  text-decoration: underline;
+}
+
+/* Container for main content */
+#data {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Styling for images */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 10px auto;
+}
+
+/* Responsive iframe */
+iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Footer style */
+footer {
+  margin-top: 50px;
+  text-align: center;
+  font-size: 1em;
+  color: #fff;
+}
+</style>
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<div id="navbar">
+  <a href="https://www.youtube.com/channel/UCPthqEpbaFfblf2DXywLrzA?view_as=subscriber" id="linkref" target="_blank">YouTube</a>
+  <a href="https://soundcloud.com/burzache-milliones" id="linkref" target="_blank">SoundCloud</a>
+  <a href="https://offtop.co/u/IKci15UCbD" id="linkref" target="_blank">OffTop</a>
+  <a href="https://noisey.vice.com/es/topic/burzache-milliones" id="linkref" target="_blank">Music</a>
+  <a href="http://www.witchipedia.com/zodiac:virgo" id="linkref" target="_blank">Virgo</a>
+</div>
+
+<!-- Main Content -->
+<div id="data">
+  <div class="container">
+    <div class="jumbotron">
+      <h2 class="text-center">Burzache Milliones</h2>
+      <h3 class="text-center"></h3>
+      
+      <!-- YouTube Embed -->
+      <iframe id="bgvid" class="col-md-12" width="560" height="315" src="https://www.youtube.com/embed/OpSQqltqsVg?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      
+      <!-- Images -->
+      <div>
+        <img src="https://scontent.fmex11-1.fna.fbcdn.net/v/t1.0-9/25398841_1767190980021556_2526742297920042431_n.jpg?oh=bfd8dff976cbed5ac45a196cd74bbfd9&oe=5B490522" alt="Burzache Image" />
+      </div>
+      
+      <div>
+        <img src="https://i.pinimg.com/originals/14/92/d6/1492d613d333c1a3465dd8f8dcf84b74.gif" alt="Animated" />
+      </div>
+      
+      <p class="text-center">More About Burzache</p>
+      
+      <!-- Quote -->
+      <div style="margin-top:20px;">
+        <p style="font-size:150%;">"Can't you see, We all Stuck In The Same System!"</p>
+        <blockquote>
+          <p>- burzache milliones</p>
+        </blockquote>
+      </div>
+      
+      <!-- Links -->
+      <div style="margin-top:20px;">
+        <a href="https://www.youtube.com/channel/UCPthqEpbaFfblf2DXywLrzA?view_as=subscriber" target="_blank">Youtube</a> |
+        <a href="https://offtop.co/u/IKci15UCbD" target="_blank">OffTop</a> |
+        <a href="https://soundcloud.com/burzache-milliones" target="_blank">SoundCloud</a> |
+        <a href="http://www.witchipedia.com/zodiac:virgo" target="_blank">Virgo</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer>
+  <p>Burzache Milliones © 2018. All Rights Reserved</p>
+</footer>
+
+</body>
+</html>
