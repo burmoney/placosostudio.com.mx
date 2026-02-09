@@ -433,32 +433,76 @@ img {
             $("#description").val(description)
 
         }
+        
+function showData() {
+    var id = document.getElementById('srchID').value;
+    if (id) {
+        // You can add your logic here to fetch or display data based on ID
+        document.getElementById('showData').style.display = 'block';
+        document.getElementById('showData').innerHTML = 'Data for ID: ' + id; // Example content
+    } else {
+        alert('Please enter an ID to search.');
+    }
+}
+
+function hideData() {
+    document.getElementById('showData').style.display = 'none';
+}
     </script>
+
+
+
+<script>
+function searchAndShow() {
+    var id = $('#srchID').val();
+    read_value(id);
+    // Show the data container after processing
+    document.getElementById('showData').style.display = 'block';
+}
+
+function hideData() {
+    document.getElementById('showData').style.display = 'none';
+}
+</script>
+
+
+
+
+
 
 </head>
 
 <body>
-                         
- <div id="showData">asf</div>
-                       
+                      
+ <div id="showData" style="display: none;">asf</div>
+                        </div>
+                    </div>
+                </div>
 
+            </form>
 
-
-
-      <div class="title">
+        </div>
+       
+  <div class="inputfield" align="center">
+    <label></label>
+    <input type="number" name="srchID" id="srchID" placeholder="Search by ID" style="text-align: center;" /> 
+<input type="button" onclick="searchAndShow()" value="Search" />
+<input type="button" onclick="hideData()" value="Hidden" />
+ 
+        
+              <input type="button" style="width: 100px;font-size:10pt;font-weight: bold;color:white;background-color:#B22222;border:1px solid #000000;padding:2px" onclick="delete_value()" value="DELETE">
            
-  <a href="#mrphekeModal3" class="btn btn-primary" style="font-size: 13px;width: 150px;float: left;" data-toggle="modal"><i class="material-icons"></i>edit shipping information</a>
-            <a href="#mrphekeModal2" class="btn btn-primary" style="font-size: 13px;width: 150px;float: left;" data-toggle="modal"><i class="material-icons"></i>Spreadsheet</a>
+
+
+      <div class="title" align="center">
+  
+     <a href="#mrphekeModal3" class="btn btn-primary" style="font-size: 13px;width: 150px;float: center;" data-toggle="modal"><i class="material-icons" align="center"></i>edit shipping information</a>
+            <a href="#mrphekeModal2" class="btn btn-primary" style="font-size: 13px;width: 150px;float: center;" data-toggle="modal"><i class="material-icons" align="center"></i>Spreadsheet</a>
         </div>
 
-        <div class="inputfield">
-                <label></label>
-                <input type="number" name="srchID" id="srchID" placeholder="Search by ID" style="text-align: center;" &nbsp; />
-                <input type="button" style="font-size:12pt;color:white;background-color:#5F9EA0;border:1px solid #000000;padding:2px" onclick="read_value($('#srchID').val())" value="Search" /><br>
-        
-            </div>
-      <div class="area">wgegwgwegwe<span id="images" class="images">image</span>w</div> 
-    <div class="wrapper">
+       
+      <div class="area" align="center">wgegwgwegwe<span id="images" class="images">image</span>w</div> 
+    <div class="wrapper" align="center">
         
 
 
@@ -466,83 +510,59 @@ img {
 
 
         <!-- Memanggil loader-->
-        <div id="loader"></div>
-        <p id="re"></p>
+        <div id="loader" align="center"></div>
+        <p id="re" align="center"></p>
      
-        <div id="mrphekeModal3" class="modal fade">
-            <form name="google-sheet">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
+        <div id="mrphekeModal3" class="modal fade" align="center">
+            <form name="google-sheet"align="center" >
+                <div class="modal-dialog"align="center"> 
+                    <div class="modal-content" align="center">
+                        <div class="modal-header" align="center">
                             <button type="button" class="btn btn-primary" data-dismiss="modal" style="font-size:10pt;font-weight: bold;color:white;background-color:#B22222;border:1px solid #000000;padding:2px;float: left;">CLOSE</button>
                             
                             
-                                    <div class="form" >
+                                    <div class="form" align="center" >
 
 
-
-
-            <div class="inputfield">
-                <label></label>
-                <input type="number" name="srchID" id="srchID" placeholder="Search by ID" style="text-align: center;" &nbsp; />
-                <input type="button" style="font-size:12pt;color:white;background-color:#5F9EA0;border:1px solid #000000;padding:2px" onclick="read_value($('#srchID').val())" value="Search" /><br>
-        
-            </div>
-<br>
-
-            <div class="inputfield">
-                <label>ID</label>
-                <input type="number" name="id" id="id" class="input" placeholder="Input ID">
-            </div>
-
-
-            <div class="inputfield">
-                <label>cost</label>
-                <input type="text" name="cost" id="cost" class="input" placeholder="cost">
-            </div>
-
-
-            
-            
-               <div class="inputfield">
-                <label>name</label>
-                <input type="text" name="name" id="name" class="input" placeholder="name">
-            </div>
-            
-               <div class="inputfield">
-                <label>unit</label>
-                <input type="text" name="unit" id="unit" class="input" placeholder="unit">
-            </div>
-            
-            
-               <div class="inputfield">
-                <label>orderid</label>
-                <input type="text" name="orderid" id="orderid" class="input" placeholder="orderid">
-            </div>
-            
-            
-            
-               <div class="inputfield">
-                <label>size</label>
-                <input type="text" name="size" id="size" class="input" placeholder="size">
-            </div>
-            
-               <div class="inputfield">
-                <label>color</label>
-                <input type="text" name="color" id="color" class="input" placeholder="color">
-            </div>
-            
-            
-                 <div class="inputfield">
-                <label>description</label>
-                <input type="text" name="description" id="description" class="input" placeholder="color">
-            </div>
-            
-            
-            
-            
-            
-            <div align="center">
+<div class="form-container" align="center">
+  <div class="form-wrapper" align="center"> 
+    <div class="form-title" align="center">Input Data</div>
+    <div class="form-fields"align="center">
+      <div class="input-group"align="center">
+        <label for="id" align="center">ID</label>
+        <input type="number" id="id" placeholder="Input ID" />
+      </div>
+      <div class="input-group">
+        <label for="cost">cost</label>
+        <input type="text" id="cost" placeholder="cost" />
+      </div>
+      <div class="input-group">
+        <label for="name">name</label>
+        <input type="text" id="name" placeholder="name" />
+      </div>
+      <div class="input-group">
+        <label for="unit">unit</label>
+        <input type="text" id="unit" placeholder="unit" />
+      </div>
+      <div class="input-group">
+        <label for="orderid">orderid</label>
+        <input type="text" id="orderid" placeholder="orderid" />
+      </div>
+      <div class="input-group">
+        <label for="size">size</label>
+        <input type="text" id="size" placeholder="size" />
+      </div>
+      <div class="input-group">
+        <label for="color">color</label>
+        <input type="text" id="color" placeholder="color" />
+      </div>
+      <div class="input-group">
+        <label for="description">description</label>
+        <input type="text" id="description" placeholder="description" />
+      </div>
+    </div>
+    <div class="button-group">
+      <div align="center">
                 <input type="button" style="width: 100px;font-size:10pt;font-weight: bold;color:white;background-color:#228B22;border:1px solid #000000;padding:2px" id="b1" onClick="insert_value()" value="SUBMIT">
 
                 <input type="button" style="width: 100px;font-size:10pt;font-weight: bold;color:white;background-color:#DAA520;border:1px solid #000000;padding:2px" onclick="read_value('')" value="READ">
@@ -551,7 +571,13 @@ img {
 
                 <input type="button" style="width: 100px;font-size:10pt;font-weight: bold;color:white;background-color:#B22222;border:1px solid #000000;padding:2px" onclick="delete_value()" value="DELETE">
             </div>
-
+    </div>
+  </div>
+</div>
+            
+            
+            
+         
   
 
 
@@ -570,90 +596,7 @@ img {
     </div>               
 
 
-    
-          <div id="mrphekeModal1" class="modal fade">
-            <form name="google-sheet">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="btn btn-primary" data-dismiss="modal" style="font-size:10pt;font-weight: bold;color:white;background-color:#B22222;border:1px solid #000000;padding:2px;float: left;">CLOSE</button>
-                            
-                            
-                                    <div class="form" >
-
-
-
-
-            
-<br>
-
-            <div class="inputfield">
-                <label>ID</label>
-                <input type="number" name="id" id="id" class="input" placeholder="Input ID">
-            </div>
-
-
-            <div class="inputfield">
-                <label>cost</label>
-                <input type="text" name="cost" id="cost" class="input" placeholder="cost">
-            </div>
-
-
-            
-            
-               <div class="inputfield">
-                <label>name</label>
-                <input type="text" name="name" id="name" class="input" placeholder="name">
-            </div>
-            
-               <div class="inputfield">
-                <label>unit</label>
-                <input type="text" name="unit" id="unit" class="input" placeholder="unit">
-            </div>
-            
-            
-               <div class="inputfield">
-                <label>orderid</label>
-                <input type="text" name="orderid" id="orderid" class="input" placeholder="orderid">
-            </div>
-            
-            
-            
-               <div class="inputfield">
-                <label>size</label>
-                <input type="text" name="size" id="size" class="input" placeholder="size">
-            </div>
-            
-               <div class="inputfield">
-                <label>color</label>
-                <input type="text" name="color" id="color" class="input" placeholder="color">
-            </div>
-            
-            
-                 <div class="inputfield">
-                <label>description</label>
-                <input type="text" name="description" id="description" class="input" placeholder="color">
-            </div>
-            
-            
-            
-            
-            
-            <div align="center">
-                <input type="button" style="width: 100px;font-size:10pt;font-weight: bold;color:white;background-color:#228B22;border:1px solid #000000;padding:2px" id="b1" onClick="insert_value()" value="SUBMIT">
-
-                <input type="button" style="width: 100px;font-size:10pt;font-weight: bold;color:white;background-color:#DAA520;border:1px solid #000000;padding:2px" onclick="read_value('')" value="READ">
-
-                <input type="button" style="width: 100px;font-size:10pt;font-weight: bold;color:white;background-color:#0000CD;border:1px solid #000000;padding:2px" onclick="update_value()" value="UPDATE">
-
-                <input type="button" style="width: 100px;font-size:10pt;font-weight: bold;color:white;background-color:#B22222;border:1px solid #000000;padding:2px" onclick="delete_value()" value="DELETE">
-            </div>
-
-  
-
-
-        </div>
-
+     
 
                             
                             
