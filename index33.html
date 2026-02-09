@@ -1,0 +1,93 @@
+ 
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Data Siswa from API</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<style>
+/* Basic styles for cards and layout */
+#cardsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 20px;
+}
+.card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  width: 250px;
+  padding: 10px;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+  background: #fff;
+}
+.card img {
+  max-width: 100%;
+  border-radius: 4px;
+}
+</style>
+</head>
+<body>
+
+<h2 style="text-align:center;">Shipping Data from API</h2>
+
+<input type="text" id="searchInput" placeholder="Search by name or id" style="width:300px; margin:auto; display:block; padding:8px;"/>
+<button onclick="filterCards()" style="display:block; margin:auto; margin-top:10px;">Filter</button>
+
+<div id="cardsContainer"></div>
+
+<script>
+const script_url = "https://script.google.com/macros/s/AKfycbzRGEVIUnqB5MtgLDOw81zSsZPPALAAa5-KAJO0xjsIcbz3WNOw6sESsUP1tLDLq70i/exec";
+
+// Function to fetch data and display
+function fetchAndDisplay() {
+  $.getJSON(script_url, function(data) {
+    displayCards(data);
+  });
+}
+
+function displayCards(data) {
+  const container = $("#cardsContainer");
+  container.empty();
+  data.forEach(item => {
+    const cardHtml = `
+      <div class="card">
+        <img src="${item.image}" alt="Image" />
+        <h4>Order#: ${item.id}</h4>
+        <p><strong>Name:</strong> ${item.name}</p>
+        <p><strong>Product:</strong> ${item.product}</p>
+        <p><strong>Total:</strong> ${item.quantity}</p>
+        <p><strong>Address:</strong> ${item.address}, ${item.city}, ${item.state}</p>
+        <p><strong>Price:</strong> $${item.price}</p>
+        <p><strong>Timestamp:</strong> ${item.timestamp}</p>
+      </div>
+    `;
+    container.append(cardHtml);
+  });
+}
+
+// Filter cards based on search input
+function filterCards() {
+  const query = $('#searchInput').val().toLowerCase();
+  $("#cardsContainer .card").each(function() {
+    const text = $(this).text().toLowerCase();
+    if (text.includes(query)) {
+      $(this).show();
+    } else {
+      $(this).hide();
+    }
+  });
+}
+
+// Load data on page load
+$(document).ready(function() {
+  fetchAndDisplay();
+});
+</script>
+
+</body>
+</html>
